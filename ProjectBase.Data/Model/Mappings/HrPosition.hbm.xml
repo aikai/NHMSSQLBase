@@ -1,11 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
-	<class name="HrPosition" table="`HR_POSITION`" lazy="true" >
-    <id name="Id" column="`PS_ID`" />
-    <property name="PsTname" column="`PS_TNAME`" />
-    <property name="PsEname" column="`PS_ENAME`" />
-    <property name="PsComment" column="`PS_COMMENT`" />
-    <property name="PsMn" column="`PS_MN`" />
-    <property name="PsIden" column="`PS_IDEN`" />
+	<class name="HrPosition" table="`job_Position`" schema="`dbo`">
+    <id name="Id" access="property" column="`Id`">
+      <generator class="guid.comb" />
+    </id>
+    <property name="CreateBy" type="String" column="`CreateBy`" length="100" />
+    <component name="CreateDate" class="ProjectBase.Utils.Components.DateTimes, ProjectBase.Utils" >
+      <property name="Value" type="DateTime" column="`CreateDate`" />
+    </component>
+    <property name="EnglishName" type="String" column="`EnglishName`" length="250" />
+    <property name="ThaiName" type="String" column="`Name`" length="250" />
+    <property name="UpdateBy" type="String" column="`UpdateBy`" length="100" />
+    <component name="UpdateDate" class="ProjectBase.Utils.Components.DateTimes, ProjectBase.Utils" >
+      <property name="Value" type="DateTime" column="`UpdateDate`" />
+    </component>
   </class>
 </hibernate-mapping>

@@ -57,8 +57,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Dao\HrPositionDao.cs" />
-    <Compile Include="Dao\HrDepartDao.cs" />
-    <Compile Include="Dao\UaeProjectManageDao.cs" />
     <Compile Include="Dao\ProvinceDao.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -71,7 +69,6 @@
     <Compile Include="Model\Entities\Amphoe.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Model\Entities\HrDepart.cs" />
     <Compile Include="Model\Entities\HrPosition.cs" />
     <Compile Include="Model\Entities\Province.cs">
       <SubType>Code</SubType>
@@ -79,7 +76,6 @@
     <Compile Include="Model\Entities\Tambol.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Model\Entities\UaeProjectManage.cs" />
     <Compile Include="Model\Validation.cs" />
     <Compile Include="NHibernateDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,8 +88,6 @@
     </Content>
     <EmbeddedResource Include="Model\Mappings\Province.hbm.xml" />
     <EmbeddedResource Include="Model\Mappings\Province.nhv.xml" />
-    <EmbeddedResource Include="Model\Mappings\HrDepart.hbm.xml" />
-    <EmbeddedResource Include="Model\Mappings\HrDepart.nhv.xml" />
     <EmbeddedResource Include="Model\Mappings\HrPosition.hbm.xml" />
     <EmbeddedResource Include="Model\Mappings\HrPosition.nhv.xml" />
     <Content Include="nhvalidator.cfg.xml">
@@ -117,10 +111,6 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Model\Mappings\Tambol.nhv.xml" />
-    <EmbeddedResource Include="Model\Mappings\UaeProjectManage.hbm.xml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Model\Mappings\UaeProjectManage.nhv.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

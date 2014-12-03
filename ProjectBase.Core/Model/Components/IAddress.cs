@@ -9,10 +9,12 @@ namespace ProjectBase.Core.Model
 {
     public interface IAddress
     {
-        string HouseNo { get; set; }
-        string Moo { get; set; }
-        string Soi { get; set; }
-        string Road { get; set; }
+        //string HouseNo { get; set; }
+        //string Moo { get; set; }
+        //string Soi { get; set; }
+        //string Road { get; set; }
+
+        string Description { get; set; }
 
         ITambol Tambol { get; set; }
         IAmphoe Amphoe { get; set; }

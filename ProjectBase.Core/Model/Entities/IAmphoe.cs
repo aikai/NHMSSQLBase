@@ -10,12 +10,16 @@ namespace ProjectBase.Core.Model
     public interface IAmphoe
     {
         Guid Id { get; set; }
+
         string ThaiName { get; set; }
         string EnglishName { get; set; }
+
+        #region TransactionLog
         IUserAccount CreateBy { get; set; }
         IValueValidation CreateDate { get; set; }
         IUserAccount UpdateBy { get; set; }
         IValueValidation UpdateDate { get; set; }
+        #endregion
 
         IProvince Province { get; set; }
 

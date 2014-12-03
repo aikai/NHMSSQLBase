@@ -38,7 +38,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\references\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\references\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Spring.Core">
+      <HintPath>..\references\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Web">
+      <HintPath>..\references\Spring.Web.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -131,6 +143,10 @@
     <Content Include="App_Data\JobOnline_log.ldf">
       <DependentUpon>JobOnline.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Pages\AmphoeTest.aspx" />
+    <Content Include="App_Pages\HrPositionTest.aspx" />
+    <Content Include="App_Pages\ProvinceTest.aspx" />
+    <Content Include="App_Pages\TambolTest.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -201,6 +217,7 @@
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
     <Content Include="packages.config" />
+    <Content Include="App_Data\JOBONLINE.MDF.bak" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -232,7 +249,9 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
@@ -240,6 +259,34 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Globals.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Pages\AmphoeTest.aspx.cs">
+      <DependentUpon>AmphoeTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Pages\AmphoeTest.aspx.designer.cs">
+      <DependentUpon>AmphoeTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Pages\HrPositionTest.aspx.cs">
+      <DependentUpon>HrPositionTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Pages\HrPositionTest.aspx.designer.cs">
+      <DependentUpon>HrPositionTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Pages\ProvinceTest.aspx.cs">
+      <DependentUpon>ProvinceTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Pages\ProvinceTest.aspx.designer.cs">
+      <DependentUpon>ProvinceTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Pages\TambolTest.aspx.cs">
+      <DependentUpon>TambolTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Pages\TambolTest.aspx.designer.cs">
+      <DependentUpon>TambolTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\AuthConfig.cs" />
@@ -311,7 +358,24 @@
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectBase.Core\ProjectBase.Core.csproj">
+      <Project>{97c50a41-04a0-4424-bda6-5aa630cffd11}</Project>
+      <Name>ProjectBase.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectBase.Data\ProjectBase.Data.csproj">
+      <Project>{5587c9b1-6608-4f2a-8e76-2a12b15afbc7}</Project>
+      <Name>ProjectBase.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectBase.Utils\ProjectBase.Utils.csproj">
+      <Project>{1f911ba2-a429-403c-b989-6af1188c427d}</Project>
+      <Name>ProjectBase.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectBase.Web\ProjectBase.Web.csproj">
+      <Project>{91870421-b465-48ad-8eef-1e5ce57b39cb}</Project>
+      <Name>ProjectBase.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Web.config" />
     <Content Include="Site.Master" />

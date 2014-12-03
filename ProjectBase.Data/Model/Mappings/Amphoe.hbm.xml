@@ -1,31 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
-	<class name="Amphoe" table="`HDSK_AMPHUR`" lazy="true" >
-    <id name="Id" access="property" column="`ID`">
+	<class name="Amphoe" table="`job_Amphur`" schema="`dbo`">
+    <id name="Id" access="property" column="`Id`">
       <generator class="guid.comb" />
     </id>
-    
-    <property name="ThaiName" column="`THAI_NAME`" />
-    <property name="EnglishName" column="`ENGLISH_NAME`" />
-    
-    <component name="CreateBy" class="ProjectBase.Utils.Commons.UserAccount, ProjectBase.Utils" >
-      <property name="UserId" column="`CREATE_BY`" type="String" update="false" />
-    </component>
+    <property name="CreateBy" type="String" column="`CreateBy`" length="100" />
     <component name="CreateDate" class="ProjectBase.Utils.Components.DateTimes, ProjectBase.Utils" >
-      <property name="Value" column="`CREATE_DATE`" type="DateTime" update="false" />
+      <property name="Value" type="DateTime" column="`CreateDate`" />
     </component>
-    <component name="UpdateBy" class="ProjectBase.Utils.Commons.UserAccount, ProjectBase.Utils" >
-      <property name="UserId" column="`UPDATE_BY`" type="String" insert="false" />
-    </component>
+    <property name="EnglishName" type="String" column="`EnglishName`" length="250" />
+    <property name="ThaiName" type="String" column="`Name`" length="250" />
+    <property name="UpdateBy" type="String" column="`UpdateBy`" length="100" />
     <component name="UpdateDate" class="ProjectBase.Utils.Components.DateTimes, ProjectBase.Utils" >
-      <property name="Value" column="`UPDATE_DATE`" type="DateTime" insert="false" />
+      <property name="Value" type="DateTime" column="`UpdateDate`" />
     </component>
-
-    <set name="Tambols" inverse="true" cascade="all">
-      <key column="`AMPHUR_ID`" />
+    <many-to-one name="Province" class="Province" column="`ParentId`" not-null="false" fetch="select" />
+    <set name="Tambols" inverse="true">
+      <key column="`ParentId`" />
       <one-to-many class="Tambol" />
     </set>
-
-    <many-to-one name="Province" class="Province" column="`PROVINCE_ID`" not-null="true" fetch="select" />
   </class>
 </hibernate-mapping>
